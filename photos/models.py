@@ -9,9 +9,9 @@ class Category(models.Model):
       return self.name
 
 class    Myphoto(models.Model):
-    Category=models.ForeignKey(Category, on_delete=models.SET_NULL)
+    Category=models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     image=models.ImageField(null=False, blank=False)
-    description=models.CharField(max_length=700, null=False, blank=False)
+    description=models.TextField()
 
     def __str__(self):
         return self.description
