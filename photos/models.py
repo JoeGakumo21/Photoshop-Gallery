@@ -9,7 +9,7 @@ class Category(models.Model):
       return self.name
 
 class Myphoto(models.Model):
-    Category=models.ForeignKey(Category, on_delete=models.SET_NULL, null=True,blank=True)
+    category=models.ForeignKey(Category, on_delete=models.SET_NULL, null=True,blank=True)
     image=models.ImageField(null=False, blank=False)
     description=models.TextField()
 
