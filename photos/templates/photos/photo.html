@@ -18,17 +18,9 @@
            <div class="col">
                <a href="{%url 'gallery' %}" class="btn btn-success m-2">Back Home</a>
                 <div >
-                    <p class="text-center"><img style="height: 60%;width: 70%;" src="https://wallpaperaccess.com/full/1480372.jpg" class="image-thumbail" alt="Bungati "></p>
-                    <p class="card-text">The CHIRON is the fastest, most powerful, and exclusive production
-                        super sports car in BUGATTI’s history. Its sophisticated design, innovative
-                        technology, and iconic, performance-oriented form make it a unique masterpiece of
-                        art, form and technique, that pushes boundaries beyond imagination.
-
-                        BUGATTI owes its distinctive character to a family of artists and engineers, and has
-                        always strived to offer the extraordinary, the unrivaled, the best. Every element of
-                        the CHIRON is a combination of reminiscence to its history and the most innovative
-                        technology. The result is a unique creation of enduring value, and breathtaking
-                        automotive accomplishment.</p>
+                    <p class="text-center">
+                        <img style="height: 60%;width: 70%;" src="{{photo.image.url}}" class="image-thumbail" alt="Bungati "></p>
+                    <p class="card-text">{{photo.description}}</p>
 
                 
                 </div>

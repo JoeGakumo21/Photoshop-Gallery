@@ -6,12 +6,14 @@ def gallery(request):
     categories=Category.objects.all()
     photos=Myphoto.objects.all()
 
-    mycontext={'categories':categories,'photos':photos}
+    context={'categories':categories,'photos':photos}
 
-    return render(request, 'photos/gallery.html',mycontext)
+    return render(request, 'photos/gallery.html',context)
     
 def viewPhoto(request,pk):
-    return render(request, 'photos/photo.html')
+    photo=Myphoto.objects.get(id=pk)
+
+    return render(request, 'photos/photo.html',{'photo':photo})
 
 def newPhoto(request):
     return render(request, 'photos/newphoto.html')
