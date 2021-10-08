@@ -25,6 +25,12 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">All</li>
+                        {%for category in categories %}
+                             <li class="list-group-item">{{category.name}}</li>
+                        {%endfor%}
+
+
+                       
                         <li class="list-group-item">An item</li>
                         <li class="list-group-item">A second item</li>
                         <li class="list-group-item">A third item</li>
@@ -36,15 +42,19 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
+                    {% for photo in photos %}
                     <div class="col-md-4">
                         <div class="card my-2">
-                            <img src="https://wallpaperaccess.com/full/1480372.jpg" class="image-thumbail" alt="...">
+                            <img src="{{photo.image.url}}" class="image-thumbail" alt="...">
                             <div class="card-body">
                                 <p class="card-text ">Category: Vehicles</p>
                                 </div>
                             <a href="{% url 'photo' 1%}" class="btn btn-outline-success btn-sm m-1">View Photo</a>
                         </div>
                     </div>
+                    {% empty%}
+                    <h1 class="text-center text-danger">OOpppss There are no Photos</h1>
+                {%endfor%}
                 </div>
             </div>
         </div>
