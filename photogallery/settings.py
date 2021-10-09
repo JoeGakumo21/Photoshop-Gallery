@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY =config('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', True)
 # development
 if config('MODE')=="dev":
@@ -45,7 +45,7 @@ if config('MODE')=="dev":
 # production
 else:
    DATABASES = {
-       'default': dj_database_url.config(
+       'default':dj_database_url.config(
            default=config('DATABASE_URL')
        )
    }
@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'photos.apps.PhotosConfig',
+    'cloudinary_storage'
 ]
 
 MIDDLEWARE = [
@@ -92,6 +93,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -152,13 +154,13 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD ='django.db.models.BigAutoField'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'joegakumo',
-    'API_KEY': '723515225592184',
-    'API_SECRET': 'CthUNXT_an6XgzBBs6FAQmBh3zI'
+    'CLOUD_NAME':'joegakumo',
+    'API_KEY':'723515225592184',
+    'API_SECRET':'CthUNXT_an6XgzBBs6FAQmBh3zI'
 }
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE ='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 django_heroku.settings(locals())
