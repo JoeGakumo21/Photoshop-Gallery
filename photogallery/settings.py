@@ -153,4 +153,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'joegakumo',
+    'API_KEY': '723515225592184',
+    'API_SECRET': 'CthUNXT_an6XgzBBs6FAQmBh3zI'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 django_heroku.settings(locals())
