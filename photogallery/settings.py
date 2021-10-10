@@ -102,7 +102,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mygallery.wsgi.application'
+WSGI_APPLICATION = 'photogallery.wsgi.application'
 
 
 # Database
