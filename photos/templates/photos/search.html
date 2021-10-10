@@ -6,6 +6,7 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
 <div class="container">
   {% if categories %}
     {% for photo in categories %}
+    <div class="col-9">
     <div class="row">
     <div class="col-md-4">
         <div class="row m-1 mb-3">
@@ -20,6 +21,7 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
         </div>
     </div>
   </div>
+</div>
     {% endfor %}
   {% endif %}
   </div>
